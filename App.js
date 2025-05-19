@@ -1,19 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, Alert, TextInput } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text
-        style={styles.text1}
-      >Olá Mundo, Weslley!</Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={
-          () => Alert.alert('Saudações', 'Olá Mundo, Weslley!')}
-      >
-        <Text style={styles.text2}>Clique aqui</Text>
-      </TouchableOpacity>
+      <Text style={{margin: 5}}>O que você quer fazer da vida?</Text>
+      <View>
+        <TextInput
+          style={styles.input}
+          placeholder='Seu Objetivo no Curso'
+        />
+      </View>
+      <View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => Alert.alert('!')}
+        >
+          <Text style={{color: 'white'}}>Clique Aqui</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -25,19 +30,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text1: {
-    fontSize: 30,
-    color: 'darkgray',
-    fontWeight: 'bolder',
+  input: {
+    height: 40,
+    width: 300,
+    borderColor: 'gray',
+    borderWidth: 1,
     marginBottom: 20,
-  },
-  text2: {
-    fontSize: 20,
-    color: 'whitesmoke',
-    fontWeight: 'bold',
+    paddingHorizontal: 10,
+    borderRadius: 5,
   },
   button: {
     backgroundColor: 'darkblue',
+    color: 'white',
     padding: 10,
     borderRadius: 5,
   },
